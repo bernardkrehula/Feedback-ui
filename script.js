@@ -4,6 +4,9 @@ let block = document.querySelector('.main');
 let face = document.querySelectorAll('.face');
 let niz = document.querySelector('.main ul');
 let naslov = document.querySelector('.main h1');
+let mainFeedbackUi = document.querySelector('.feedback-ui');
+let UI = document.querySelector('.UI');
+let feedbackFace = document.querySelector('.face-feedback');
 
 let activeIndex = 0;
 let slectedFeedback; //Ovoj varijabli dodijelit vrijednost na click i poslije je iskoristit da je pokazem u modal
@@ -35,7 +38,16 @@ lista.forEach((element, index) => {
     slika.classList.add('photo');
 });
 
-lista.forEach((element, index) => {
+lista.forEach((element) => {
+    function addClass(){
+        lista.forEach((element) => {
+            element.classList.add('feedback-active')
+            let elems = document.querySelector('.feedback-active');
+            if(elems){
+                elems.classList.remove('feedback-active');
+            }
+        })
+    }
     element.addEventListener('click', (event) => {
         //Umjesto da rucno dodajes boju preko style.backgroundColor
         //U css napravi klasu feedback-active
@@ -44,30 +56,26 @@ lista.forEach((element, index) => {
         //Zajednicka css pravila za sve reviewe stavit pod neku klasu feedback
         //Tu zajednicku klasu dodat svih feedbackima
         
-        element.classList.add('feedback-active')
-        let elems = document.querySelector('.feedback-active');
-        if(elems != null){
-                elems.classList.remove('feedback-active');
-                console.log(elems);
-                
-            }
+        addClass();
         event.target.closest('li').className = 'feedback-active';
-        })
 });
+});
+
+UI.style.display = 'none';
+function review() {
+    lista.forEach((element) => {
+        if(element.classList = 'feedback-active'){
+            mainFeedbackUi.style.display = 'none';
+            UI.style.display = 'block';
+            feedbackFace.innerHTML = 'sad';
+
+        }
+        console.log(element.classList);
+    })
+} 
 btn.addEventListener('click', (event) => {
     review();
 })
-function review() {
-    niz.style.display = 'none';
-    naslov.style.display = 'none';
-    btn.style.display = 'none';
-    const tekst = document.createElement('h1');
-    const feedBack = document.createElement('h2');
-    tekst.innerHTML = 'Thank you!';
-    feedBack.innerHTML = 'Feedback: ';
-    block.appendChild(tekst);
-    block.appendChild(feedBack);
-} 
 
 // Sav kontent na ekranu napraviti preko javascripta
 // Obrisati sav html a svaki od list elementa potrpati u array main
