@@ -1,0 +1,63 @@
+html{
+    font-size: 62.5%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    background-color: rgb(220, 255, 250);
+}
+.main {
+    margin: 400px auto;
+    text-align: center;
+    background-color: rgb(233, 255, 252);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    padding: 25px 30px;
+}
+.main ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+.main li {
+    cursor: pointer;
+    margin: 10px 0px;
+    padding: 5px 30px;
+}
+.main li:hover {
+    background-color: rgb(116, 182, 85);
+    transition: 0.2s ease-in-out;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.main svg{
+    color: black;
+}
+.main img {
+    height: 50px;
+}
+.main button {
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(0, 148, 141);
+    margin-top: 20px;
+}
+.main button:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    transition: 0.4s ease-in-out;
+}
+.main h1 {
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 2.8rem;
+}
+h2 {
+    margin-top: 5px;
+}
