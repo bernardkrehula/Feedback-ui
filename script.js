@@ -43,11 +43,14 @@ lista.forEach((element, index) => {
         //Samo na aktivni dodas aktivnu klasu
         //Zajednicka css pravila za sve reviewe stavit pod neku klasu feedback
         //Tu zajednicku klasu dodat svih feedbackima
-        element.style.backgroundColor = 'rgb(116, 182, 85)';
-        element.style.color = 'white';
-        element.style.borderRadius = '10px';
-        element.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.4)';
-        console.log(index);
+        element.classList.add('feedback-active')
+        let elems = document.querySelector('.feedback-active');
+        if(elems != null){
+            elems.classList.remove('feedback-active');
+            console.log(elems);
+           
+        }
+        event.target.className = 'feedback-active';
     })
 });
 btn.addEventListener('click', (event) => {

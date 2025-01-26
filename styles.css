@@ -61,3 +61,9 @@ body {
 h2 {
     margin-top: 5px;
 }
+.feedback-active {
+    background-color: rgb(116, 182, 85);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}   
