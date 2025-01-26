@@ -64,13 +64,12 @@ lista.forEach((element) => {
 UI.style.display = 'none';
 function review() {
     lista.forEach((element) => {
-        if(element.classList = 'feedback-active'){
+        if(element.classList.contains('feedback-active')){
             mainFeedbackUi.style.display = 'none';
             UI.style.display = 'block';
-            feedbackFace.innerHTML = 'sad';
-
+            let faces = document.querySelector('.feedback-active h1').innerHTML;
+            feedbackFace.innerHTML = `${faces}`;
         }
-        console.log(element.classList);
     })
 } 
 btn.addEventListener('click', (event) => {

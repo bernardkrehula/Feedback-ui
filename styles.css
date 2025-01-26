@@ -66,4 +66,22 @@ h2 {
     color: white;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
-}   
+}
+.align-text{
+    display: flex;
+    justify-content: center;
+}
+.face-feedback {
+    margin-left: 10px;
+    text-transform: capitalize;
+}
+.UI {
+    color: green;
+    font-size: 1.4rem;
+    word-spacing: 0.4rem;
+    font-family: monospace;
+}
+.UI h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
