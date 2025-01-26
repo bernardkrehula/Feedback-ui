@@ -43,15 +43,16 @@ lista.forEach((element, index) => {
         //Samo na aktivni dodas aktivnu klasu
         //Zajednicka css pravila za sve reviewe stavit pod neku klasu feedback
         //Tu zajednicku klasu dodat svih feedbackima
+        
         element.classList.add('feedback-active')
         let elems = document.querySelector('.feedback-active');
         if(elems != null){
-            elems.classList.remove('feedback-active');
-            console.log(elems);
-           
-        }
-        event.target.className = 'feedback-active';
-    })
+                elems.classList.remove('feedback-active');
+                console.log(elems);
+                
+            }
+        event.target.closest('li').className = 'feedback-active';
+        })
 });
 btn.addEventListener('click', (event) => {
     review();
