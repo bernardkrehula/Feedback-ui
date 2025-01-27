@@ -8,7 +8,6 @@ let mainFeedbackUi = document.querySelector('.feedback-ui');
 let UI = document.querySelector('.UI');
 let feedbackFace = document.querySelector('.face-feedback');
 
-let activeIndex = 0;
 let slectedFeedback; //Ovoj varijabli dodijelit vrijednost na click i poslije je iskoristit da je pokazem u modal
 const main = [
     {
@@ -39,7 +38,7 @@ lista.forEach((element, index) => {
 });
 
 lista.forEach((element)=> {
-    element.addEventListener('click', () => {
+    element.addEventListener('click', (event) => {
         lista.forEach((el) => el.classList.remove('feedback-active'))
         element.classList.add('feedback-active')
         //console.log(element)
@@ -48,16 +47,9 @@ lista.forEach((element)=> {
         //Gore imam varijablu selectedFeedback
         //Procitaj id sa kliknutog elementa i sacuvaj ga u tu varijablu
         //Onda tu varijablu upotrijebis kao text content ili html
-        // 
-    })
-})
-
-lista.forEach((element) =>{
-    element.addEventListener('click', (event) =>{
         slectedFeedback = event.target.closest('li').id;
     })
 })
-
 UI.style.display = 'none';
 function review () {
     feedbackFace.innerHTML = `${slectedFeedback}`;
