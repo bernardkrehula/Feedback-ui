@@ -38,49 +38,32 @@ lista.forEach((element, index) => {
     slika.classList.add('photo');
 });
 
-lista.forEach((element) => {
-    function addClass(){
-        lista.forEach((element) => {
-            element.classList.add('feedback-active')
-            let elems = document.querySelector('.feedback-active');
-            if(elems){
-                elems.classList.remove('feedback-active');
-            }
-        })
-    }
-    element.addEventListener('click', (event) => {
-        //Umjesto da rucno dodajes boju preko style.backgroundColor
-        //U css napravi klasu feedback-active
-        //Prije nego dodas aktivnu klasu makni sa svih aktivnu klasu
-        //Samo na aktivni dodas aktivnu klasu
-        //Zajednicka css pravila za sve reviewe stavit pod neku klasu feedback
-        //Tu zajednicku klasu dodat svih feedbackima
-        
-        addClass();
-        event.target.closest('li').className = 'feedback-active';
-});
-});
+lista.forEach((element)=> {
+    element.addEventListener('click', () => {
+        lista.forEach((el) => el.classList.remove('feedback-active'))
+        element.classList.add('feedback-active')
+        //console.log(element)
+        //Imam kliknuti element 
+        //Svaki kliknuti element ima id (sad, happy, neutral)
+        //Gore imam varijablu selectedFeedback
+        //Procitaj id sa kliknutog elementa i sacuvaj ga u tu varijablu
+        //Onda tu varijablu upotrijebis kao text content ili html
+        // 
+    })
+})
+
+lista.forEach((element) =>{
+    element.addEventListener('click', (event) =>{
+        slectedFeedback = event.target.closest('li').id;
+    })
+})
 
 UI.style.display = 'none';
-function review() {
-    lista.forEach((element) => {
-        if(element.classList.contains('feedback-active')){
-            mainFeedbackUi.style.display = 'none';
-            UI.style.display = 'block';
-            let faces = document.querySelector('.feedback-active h1').innerHTML;
-            feedbackFace.innerHTML = `${faces}`;
-        }
-    })
-} 
+function review () {
+    feedbackFace.innerHTML = `${slectedFeedback}`;
+    UI.style.display = 'block';
+    mainFeedbackUi.style.display = 'none';
+}
 btn.addEventListener('click', (event) => {
     review();
 })
-
-// Sav kontent na ekranu napraviti preko javascripta
-// Obrisati sav html a svaki od list elementa potrpati u array main
-//primjer:
-/*{
-    img: "putanja/do/slike",
-    face: "sad" 
-}
-*/
